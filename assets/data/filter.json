@@ -1,0 +1,74 @@
+[
+    {
+        "name": "Đồ ăn nhanh",
+        "count": 7
+    },
+    {
+        "name": "Ăn vặt",
+        "count": 9
+    },
+    {
+        "name": "Đồ uống",
+        "count": 330
+    },
+    {
+        "name": "Cơm",
+        "count": 201
+    },
+    {
+        "name": "Ăn chay",
+        "count": 73
+    },
+    {
+        "name": "Hải sản",
+        "count": 118
+    },
+    {
+        "name": "Bánh",
+        "count": 36
+    },
+    {
+        "name": "Tráng miệng",
+        "count": 282
+    },
+    {
+        "name": "Falafel",
+        "count": 30
+    },
+    {
+        "name": "German",
+        "count": 5
+    },
+    {
+        "name": "Healthy",
+        "count": 247
+    },
+    {
+        "name": "Indian",
+        "count": 112
+    },
+    {
+        "name": "Meal Deal",
+        "count": 129
+    },
+    {
+        "name": "Pancakes",
+        "count": 15
+    },
+    {
+        "name": "Pizza",
+        "count": 208
+    },
+    {
+        "name": "Súp",
+        "count": 8
+    },
+    {
+        "name": "Takeaways",
+        "count": 87
+    },
+    {
+        "name": "Wraps",
+        "count": 99
+    }
+]
