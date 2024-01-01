@@ -14,16 +14,14 @@ const renderEmpty = () => <View />;
 
 const noRender = () => <View style={{ display: 'none' }} />;
 
-// Override `toJSON` of interpolated value because of
-// an error when serializing style on view inside inspector.
-// See: https://github.com/jaysoo/react-native-parallax-scroll-view/issues/23
+
 const interpolate = (value, opts) => {
   const x = value.interpolate(opts);
   x.toJSON = () => x.__getValue();
   return x;
 };
 
-// Properties accepted by `ParallaxScrollView`.
+
 const IPropTypes = {
   backgroundColor: string,
   backgroundScrollSpeed: number,
@@ -58,7 +56,7 @@ class ParallaxScrollView extends Component {
       viewWidth: window.width,
     };
     this.scrollY = new Animated.Value(0);
-    this._footerComponent = { setNativeProps() {} }; // Initial stub
+    this._footerComponent = { setNativeProps() {} }; 
     this._footerHeight = 0;
   }
 
@@ -126,9 +124,7 @@ class ParallaxScrollView extends Component {
             ref: SCROLLVIEW_REF,
             style: [styles.scrollView, scrollElement.props.style],
             scrollEventThrottle: 1,
-            // Using Native Driver greatly optimizes performance
             onScroll: Animated.event([{ nativeEvent: { contentOffset: { y: this.scrollY } } }], { useNativeDriver: true, listener: this._onScroll.bind(this) }),
-            // onScroll: this._onScroll.bind(this)
           },
           foreground,
           bodyComponent,
@@ -139,9 +135,6 @@ class ParallaxScrollView extends Component {
     );
   }
 
-  /*
-   * Expose `ScrollView` API so this component is composable with any component that expects a `ScrollView`.
-   */
   getScrollResponder() {
     return this.refs[SCROLLVIEW_REF]._component.getScrollResponder();
   }
@@ -179,8 +172,6 @@ class ParallaxScrollView extends Component {
     prevOnScroll(e);
   }
 
-  // This optimizes the state update of current scrollY since we don't need to
-  // perform any updates when user has scrolled past the pivot point.
   _maybeUpdateScrollPosition(e) {
     const { parallaxHeaderHeight, stickyHeaderHeight } = this.props;
     const { scrollY } = this;
@@ -390,7 +381,7 @@ ParallaxScrollView.defaultProps = {
   renderScrollComponent: (props) => <Animated.ScrollView {...props} />,
   renderBackground: renderEmpty,
   renderContentBackground: noRender,
-  renderParallaxHeader: renderEmpty, // Deprecated (will be removed in 0.18.0)
+  renderParallaxHeader: renderEmpty,
   renderForeground: null,
   stickyHeaderHeight: 0,
   contentContainerStyle: null,

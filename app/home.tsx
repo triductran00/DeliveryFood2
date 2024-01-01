@@ -1,4 +1,3 @@
-//index.tsx
 import { Text, ScrollView, StyleSheet } from 'react-native';
 import React from 'react';
 import Categories from '../Components/Categories';

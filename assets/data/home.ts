@@ -1,11 +1,11 @@
 export const categories = [
   {
     text: 'Nhà hàng',
-    img: require('@/assets/data/c1.png'),
+    img: require('@/assets/data/c1.jpeg'),
   },
   {
-    text: 'Tạp hóa',
-    img: require('@/assets/data/c2.png'),
+    text: 'Siêu thị',
+    img: require('@/assets/data/c2.jpeg'),
   },
   {
     text: 'Ưu đãi',
@@ -16,12 +16,12 @@ export const categories = [
     img: require('@/assets/data/c4.png'),
   },
   {
-    text: 'HOP',
+    text: 'Trái cây',
     img: require('@/assets/data/c5.png'),
   },
   {
-    text: 'Pharmacy',
-    img: require('@/assets/data/c6.png'),
+    text: 'Nhà thuốc',
+    img: require('@/assets/data/c6.jpg'),
   },
 ];
 

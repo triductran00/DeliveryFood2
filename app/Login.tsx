@@ -1,9 +1,9 @@
-import { View, Text, StyleSheet, TextInput, Button, KeyboardAvoidingView, ActivityIndicator, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, TextInput, Button, KeyboardAvoidingView, ActivityIndicator, TouchableOpacity } from 'react-native';
 import React, { useState } from 'react';
 import { FIREBASE_AUTH } from '@/FirebaseConfig';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import Colors from '@/constants/Colors';
+import { Ionicons } from '@expo/vector-icons';
+
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -22,7 +22,7 @@ const Login = () => {
         console.log(response);
     } catch (error: any) {
         console.log(error);
-        alert('Đăng nhập thất bại: ' + error.message);
+        alert('Đăng nhập thất bại' + '\n' + error.message);
     } finally {
         setLoading(false);
     }
@@ -36,14 +36,14 @@ const Login = () => {
         alert('Đăng ký thành công!!!');
     } catch (error: any) {
         console.log(error);
-        alert('Đăng ký thất bại: ' + error.message);
+        alert('Đăng ký thất bại' + '\n' + error.message);
     } finally {
         setLoading(false);
     }
   };
 
   return (
-    <View>
+    <View style={styles.container}>
       <KeyboardAvoidingView behavior='padding'>
         <TextInput
           value={email}
@@ -63,19 +63,26 @@ const Login = () => {
             onChangeText={(text) => setPassword(text)}
           />
           <TouchableOpacity onPress={togglePasswordVisibility} style={styles.icon}>
-            <Icon name={hidePassword ? 'eye-slash' : 'eye'} size={20} color="#888" />
+            <Ionicons name={hidePassword ? 'eye-off' : 'eye'} size={20} color="#f7442e" />
           </TouchableOpacity>
         </View>
 
-        {loading ? (
-          <ActivityIndicator size="large" color="#f7442e" /> 
-        ) : (
-          <>
-            <Button title="Đăng nhập" onPress={signIn} />
-            <Button title="Đăng ký" onPress={signUp} /> 
-          </>
-        )}
-      </KeyboardAvoidingView>
+        <View style = {{marginHorizontal:100, marginTop:10, flexDirection: 'column', justifyContent: 'center'}}>
+          {loading ? (
+            <ActivityIndicator size="large" color="#f7442e" /> 
+          ) : (
+            <>
+                <View style={{ marginBottom: 10 }}>
+                    <Button title="Đăng nhập" onPress={signIn} color="#f7442e" />
+                </View>
+
+                <View>
+                  <Button title="Đăng ký" onPress={signUp} color="#f7442e"/> 
+                </View>
+            </>
+          )} 
+          </View>
+        </KeyboardAvoidingView>
     </View>
   );
 };
@@ -83,7 +90,10 @@ const Login = () => {
 export default Login;
 
 const styles = StyleSheet.create({
-
+  container: {
+    justifyContent: 'center',
+    paddingHorizontal: 20,
+  },
   input: {
     marginVertical: 4,
     height: 50,

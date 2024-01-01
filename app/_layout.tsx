@@ -1,12 +1,10 @@
 import { Stack, useNavigation } from 'expo-router';
-import CustomHeader from '@/Components/CustomHeader';
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import Colors from '../constants/Colors';
 import { TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 export const unstable_settings = {
-  // Ensure that reloading on `/modal` keeps a back button present.
   initialRouteName: 'index',
 };
 

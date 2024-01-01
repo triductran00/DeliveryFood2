@@ -32,19 +32,19 @@
         "count": 282
     },
     {
-        "name": "Falafel",
+        "name": "Pizza",
         "count": 30
     },
     {
-        "name": "German",
+        "name": "Mì",
         "count": 5
     },
     {
-        "name": "Healthy",
+        "name": "Các món cuốn",
         "count": 247
     },
     {
-        "name": "Indian",
+        "name": "Bánh mì",
         "count": 112
     },
     {
@@ -52,11 +52,11 @@
         "count": 129
     },
     {
-        "name": "Pancakes",
+        "name": "Lẩu",
         "count": 15
     },
     {
-        "name": "Pizza",
+        "name": "Đồ nướng",
         "count": 208
     },
     {
@@ -64,11 +64,11 @@
         "count": 8
     },
     {
-        "name": "Takeaways",
+        "name": "Đồ uống có cồn",
         "count": 87
     },
     {
-        "name": "Wraps",
+        "name": "Pasta",
         "count": 99
     }
 ]

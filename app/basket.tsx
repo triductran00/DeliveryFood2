@@ -12,8 +12,8 @@ const Basket = () => {
   const [order, setOrder] = useState(false);
 
   const FEES = {
-    service: 2.99,
-    delivery: 5.99,
+    service: 5000,
+    delivery: 15000,
   };
 
   const startCheckout = () => {
@@ -69,7 +69,7 @@ const Basket = () => {
 
                 <View style={styles.totalRow}>
                   <Text style={styles.total}>Tổng thanh toán</Text>
-                  <Text style={{ fontSize: 18, fontWeight: 'bold' }}>đ{(total + FEES.service + FEES.delivery).toFixed(2)}</Text>
+                  <Text style={{ fontSize: 18, fontWeight: 'bold' }}>đ{(total + FEES.service + FEES.delivery)}</Text>
                 </View>
               </View>
             }
